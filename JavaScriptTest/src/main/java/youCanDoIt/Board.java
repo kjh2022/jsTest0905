@@ -1,13 +1,12 @@
 package youCanDoIt;
 
 import java.util.Date;
-
 public class Board {
 	private int bno;
 	private String title;
 	private String content;
 	private String writer;
-	private Date creationDate;
+	private String creationDate;
 
 	public int getBno() {
 		return bno;
@@ -41,11 +40,11 @@ public class Board {
 		this.writer = writer;
 	}
 
-	public Date getCreationDate() {
+	public String getCreationDate() {
 		return creationDate;
 	}
 
-	public void setCreationDate(Date creationDate) {
+	public void setCreationDate(String creationDate) {
 		this.creationDate = creationDate;
 	}
 
