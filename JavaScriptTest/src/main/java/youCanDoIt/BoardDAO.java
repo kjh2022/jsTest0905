@@ -17,7 +17,7 @@ public class BoardDAO extends DAO {
 
 	public List<Board> getBoardList() {
 		List<Board> list = new ArrayList<>();
-		String sql = "select * from board";
+		String sql = "select * from tbl_board";
 		conn();
 		try {
 			pstmt = conn.prepareStatement(sql);
@@ -28,7 +28,7 @@ public class BoardDAO extends DAO {
 				brd.setTitle(rs.getString("title"));
 				brd.setContent(rs.getString("content"));
 				brd.setWriter(rs.getString("writer"));
-				brd.setCreationDate(rs.getString("creationDate"));
+				brd.setCreationDate(rs.getString("creation_date"));
 				list.add(brd);
 			}
 		} catch (SQLException e) {
@@ -40,7 +40,7 @@ public class BoardDAO extends DAO {
 	}
 
 	public boolean deleteBoard(int bno) {
-		String sql = "delete from board where bno = ?";
+		String sql = "delete from tbl_board where bno = ?";
 		conn();
 		try {
 			pstmt = conn.prepareStatement(sql);
@@ -57,7 +57,7 @@ public class BoardDAO extends DAO {
 	}
 
 	public boolean insertBoard(Board board) {
-		String sql = "insert into board values(seq_board + 1, ?,?,?,sysdate)";
+		String sql = "insert into tbl_board values(seq_board + 1, ?,?,?,sysdate)";
 		conn();
 		try {
 			pstmt = conn.prepareStatement(sql);

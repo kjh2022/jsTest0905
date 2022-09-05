@@ -36,7 +36,7 @@ public class BoardServlet extends HttpServlet {
 			obj.addProperty("title" , brd.getTitle());
 			obj.addProperty("content" , brd.getContent());
 			obj.addProperty("writer" , brd.getWriter());
-			obj.addProperty("creationDate", brd.getCreationDate());
+			obj.addProperty("creation_date", brd.getCreationDate());
 			ary.add(obj);
 		}
 		Gson gson = new GsonBuilder().create();
